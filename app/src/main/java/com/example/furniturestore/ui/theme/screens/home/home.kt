@@ -42,9 +42,13 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import com.example.furniturestore.Navigation.ROUTE_ABOUT
 import com.example.furniturestore.Navigation.ROUTE_ADD_PRODUCT
 import com.example.furniturestore.Navigation.ROUTE_HOME
-import com.example.furniturestore.Navigation.ROUTE_REGISTER
+import com.example.furniturestore.Navigation.ROUTE_IMAGE_1
+import com.example.furniturestore.Navigation.ROUTE_IMAGE_2
+import com.example.furniturestore.Navigation.ROUTE_IMAGE_5
+import com.example.furniturestore.Navigation.ROUTE_IMAGE_6
 import com.example.furniturestore.R
 
 
@@ -81,7 +85,7 @@ fun HomeScreen(navController: NavHostController,) {
                         tint = Color.Black
                     )
                 }
-                IconButton(onClick = { navController.navigate(ROUTE_REGISTER) }) {
+                IconButton(onClick = { navController.navigate(ROUTE_ABOUT) }) {
                     Icon(
                         imageVector = Icons.Filled.Person,
                         contentDescription = "",
@@ -189,6 +193,7 @@ fun HomeScreen(navController: NavHostController,) {
 
                         Row {
                             OutlinedButton(onClick = {
+                                navController.navigate(ROUTE_IMAGE_1)
                                 val shareIntent = Intent(Intent.ACTION_SEND)
                                 shareIntent.type = "text/plain"
                                 shareIntent.putExtra(
@@ -198,7 +203,7 @@ fun HomeScreen(navController: NavHostController,) {
                                 mContext.startActivity(Intent.createChooser(shareIntent, "Share"))
 
                             }) {
-                                Text(text = "Call")
+                                Text(text = "Buy")
 
                             }
                             OutlinedButton(onClick = {
@@ -307,6 +312,7 @@ fun HomeScreen(navController: NavHostController,) {
 
                         Row {
                             OutlinedButton(onClick = {
+                                navController.navigate(ROUTE_IMAGE_2)
                                 val shareIntent = Intent(Intent.ACTION_SEND)
                                 shareIntent.type = "text/plain"
                                 shareIntent.putExtra(
@@ -316,7 +322,7 @@ fun HomeScreen(navController: NavHostController,) {
                                 mContext.startActivity(Intent.createChooser(shareIntent, "Share"))
 
                             }) {
-                                Text(text = "Call")
+                                Text(text = "Buy")
 
                             }
                             OutlinedButton(onClick = {
@@ -336,6 +342,7 @@ fun HomeScreen(navController: NavHostController,) {
                     }
                     //End of Column1
                 }
+
                 Row(
                     modifier = Modifier.padding(start = 20.dp)
                 ) {
@@ -395,6 +402,7 @@ fun HomeScreen(navController: NavHostController,) {
                                 imageVector = Icons.Default.Star,
                                 contentDescription = "star",
                                 tint = Color.Green
+
                             )
                             Icon(
                                 imageVector = Icons.Default.Star,
@@ -427,6 +435,7 @@ fun HomeScreen(navController: NavHostController,) {
 
                         Row {
                             OutlinedButton(onClick = {
+                                navController.navigate(ROUTE_IMAGE_1)
                                 val shareIntent = Intent(Intent.ACTION_SEND)
                                 shareIntent.type = "text/plain"
                                 shareIntent.putExtra(
@@ -436,7 +445,7 @@ fun HomeScreen(navController: NavHostController,) {
                                 mContext.startActivity(Intent.createChooser(shareIntent, "Share"))
 
                             }) {
-                                Text(text = "Call")
+                                Text(text = "Buy")
 
                             }
                             OutlinedButton(onClick = {
@@ -473,7 +482,7 @@ fun HomeScreen(navController: NavHostController,) {
                             ) {
                                 Image(
                                     painter = painterResource(id = R.drawable.favorite_img_4),
-                                    contentDescription = "car10",
+                                    contentDescription = "favorite",
                                     modifier = Modifier.fillMaxSize(),
                                     contentScale = ContentScale.FillBounds
                                 )
@@ -491,7 +500,7 @@ fun HomeScreen(navController: NavHostController,) {
                         }
                         Spacer(modifier = Modifier.height(5.dp))
                         Text(
-                            text = "Vase",
+                            text = "vase",
                             fontSize = 25.sp,
                             fontWeight = FontWeight.Bold,
                             fontFamily = FontFamily.Serif,
@@ -536,7 +545,7 @@ fun HomeScreen(navController: NavHostController,) {
                         Spacer(modifier = Modifier.height(5.dp))
 
                         Text(
-                            text = "From Ksh.20000",
+                            text = "From Ksh.18000",
                             fontSize = 15.sp,
                             fontFamily = FontFamily.Serif,
                             color = Color.Green
@@ -545,6 +554,7 @@ fun HomeScreen(navController: NavHostController,) {
 
                         Row {
                             OutlinedButton(onClick = {
+                                navController.navigate(ROUTE_IMAGE_2)
                                 val shareIntent = Intent(Intent.ACTION_SEND)
                                 shareIntent.type = "text/plain"
                                 shareIntent.putExtra(
@@ -554,7 +564,7 @@ fun HomeScreen(navController: NavHostController,) {
                                 mContext.startActivity(Intent.createChooser(shareIntent, "Share"))
 
                             }) {
-                                Text(text = "Call")
+                                Text(text = "Buy")
 
                             }
                             OutlinedButton(onClick = {
@@ -572,11 +582,257 @@ fun HomeScreen(navController: NavHostController,) {
                             }
                         }
                     }
+                    //End of Column1
+                }
+                Row(
+                    modifier = Modifier.padding(start = 20.dp)
+                ) {
+                    //Column1
+
+                    Column {
+                        Card(
+                            modifier = Modifier
+                                .height(100.dp)
+                                .width(160.dp)
+
+                        ) {
+
+                            Box(
+                                modifier = Modifier.fillMaxWidth(),
+                                contentAlignment = Alignment.Center
+                            ) {
+                                Image(
+                                    painter = painterResource(id = R.drawable.favorite_img_5),
+                                    contentDescription = "car10",
+                                    modifier = Modifier.fillMaxSize(),
+                                    contentScale = ContentScale.FillBounds
+                                )
+                                Icon(
+                                    imageVector = Icons.Default.FavoriteBorder,
+                                    contentDescription = "favorite",
+                                    tint = Color.White,
+                                    modifier = Modifier
+                                        .align(Alignment.TopEnd)
+                                        .padding(15.dp)
+                                )
+
+                            }
+
+                        }
+                        Spacer(modifier = Modifier.height(5.dp))
+                        Text(
+                            text = "white vase",
+                            fontSize = 25.sp,
+                            fontWeight = FontWeight.Bold,
+                            fontFamily = FontFamily.Serif,
+                        )
+                        Spacer(modifier = Modifier.height(5.dp))
+                        Row {
+
+                            Icon(
+                                imageVector = Icons.Default.Star,
+                                contentDescription = "star",
+                                tint = Color.Green
+                            )
+                            Icon(
+                                imageVector = Icons.Default.Star,
+                                contentDescription = "star",
+                                tint = Color.Green
+                            )
+                            Icon(
+                                imageVector = Icons.Default.Star,
+                                contentDescription = "star",
+                                tint = Color.Green
+
+                            )
+                            Icon(
+                                imageVector = Icons.Default.Star,
+                                contentDescription = "star",
+                                tint = Color.Green
+                            )
+                            Icon(
+                                imageVector = Icons.Default.Star,
+                                contentDescription = "star",
+                                tint = Color.Green
+                            )
+                        }
+                        Spacer(modifier = Modifier.height(5.dp))
+
+                        Text(
+                            text = "443 reviews",
+                            fontSize = 15.sp,
+                            fontFamily = FontFamily.Serif
+                        )
+
+                        Spacer(modifier = Modifier.height(5.dp))
+
+                        Text(
+                            text = "From Ksh.89000",
+                            fontSize = 15.sp,
+                            fontFamily = FontFamily.Serif,
+                            color = Color.Green
+                        )
+                        Spacer(modifier = Modifier.height(5.dp))
+
+                        Row {
+                            OutlinedButton(onClick = {
+                                navController.navigate(ROUTE_IMAGE_5)
+                                val shareIntent = Intent(Intent.ACTION_SEND)
+                                shareIntent.type = "text/plain"
+                                shareIntent.putExtra(
+                                    Intent.EXTRA_TEXT,
+                                    "Check out this is a cool content"
+                                )
+                                mContext.startActivity(Intent.createChooser(shareIntent, "Share"))
+
+                            }) {
+                                Text(text = "Buy")
+
+                            }
+                            OutlinedButton(onClick = {
+                                val shareIntent = Intent(Intent.ACTION_SEND)
+                                shareIntent.type = "text/plain"
+                                shareIntent.putExtra(
+                                    Intent.EXTRA_EMAIL,
+                                    arrayOf("mutindavirginia6@gmail.com")
+                                )
+                                shareIntent.putExtra(Intent.EXTRA_SUBJECT, "APPLICATION FOR A JOB")
+                                shareIntent.putExtra(Intent.EXTRA_TEXT, "Hello, this is Virginia")
+                                mContext.startActivity(shareIntent)
+                            }) {
+                                Text(text = "Email")
+                            }
+                        }
+                    }
+                    //End of Column1
+                    Spacer(modifier = Modifier.width(10.dp))
+
+                    //Column1
+
+                    Column {
+                        Card(
+                            modifier = Modifier
+                                .height(100.dp)
+                                .width(160.dp)
+
+                        ) {
+
+                            Box(
+                                modifier = Modifier.fillMaxWidth(),
+                                contentAlignment = Alignment.Center
+                            ) {
+                                Image(
+                                    painter = painterResource(id = R.drawable.favorite_img_6),
+                                    contentDescription = "favorite",
+                                    modifier = Modifier.fillMaxSize(),
+                                    contentScale = ContentScale.FillBounds
+                                )
+                                Icon(
+                                    imageVector = Icons.Default.FavoriteBorder,
+                                    contentDescription = "favorite",
+                                    tint = Color.White,
+                                    modifier = Modifier
+                                        .align(Alignment.TopEnd)
+                                        .padding(15.dp)
+                                )
+
+                            }
+
+                        }
+                        Spacer(modifier = Modifier.height(5.dp))
+                        Text(
+                            text = "shelf",
+                            fontSize = 25.sp,
+                            fontWeight = FontWeight.Bold,
+                            fontFamily = FontFamily.Serif,
+                        )
+                        Spacer(modifier = Modifier.height(5.dp))
+                        Row {
+
+                            Icon(
+                                imageVector = Icons.Default.Star,
+                                contentDescription = "star",
+                                tint = Color.Green
+                            )
+                            Icon(
+                                imageVector = Icons.Default.Star,
+                                contentDescription = "star",
+                                tint = Color.Green
+                            )
+                            Icon(
+                                imageVector = Icons.Default.Star,
+                                contentDescription = "star",
+                                tint = Color.Green
+                            )
+                            Icon(
+                                imageVector = Icons.Default.Star,
+                                contentDescription = "star",
+                                tint = Color.Green
+                            )
+                            Icon(
+                                imageVector = Icons.Default.Star,
+                                contentDescription = "star",
+                                tint = Color.Green
+                            )
+                        }
+                        Spacer(modifier = Modifier.height(5.dp))
+
+                        Text(
+                            text = "445 reviews",
+                            fontSize = 15.sp,
+                            fontFamily = FontFamily.Serif
+                        )
+
+                        Spacer(modifier = Modifier.height(5.dp))
+
+                        Text(
+                            text = "From Ksh.18000",
+                            fontSize = 15.sp,
+                            fontFamily = FontFamily.Serif,
+                            color = Color.Green
+                        )
+                        Spacer(modifier = Modifier.height(5.dp))
+
+                        Row {
+                            OutlinedButton(onClick = {
+                                navController.navigate(ROUTE_IMAGE_6)
+                                val shareIntent = Intent(Intent.ACTION_SEND)
+                                shareIntent.type = "text/plain"
+                                shareIntent.putExtra(
+                                    Intent.EXTRA_TEXT,
+                                    "Check out this is a cool content"
+                                )
+                                mContext.startActivity(Intent.createChooser(shareIntent, "Share"))
+
+                            }) {
+                                Text(text = "Buy")
+
+                            }
+                            OutlinedButton(onClick = {
+                                val shareIntent = Intent(Intent.ACTION_SEND)
+                                shareIntent.type = "text/plain"
+                                shareIntent.putExtra(
+                                    Intent.EXTRA_EMAIL,
+                                    arrayOf("mutindavirginia6@gmail.com")
+                                )
+                                shareIntent.putExtra(Intent.EXTRA_SUBJECT, "APPLICATION FOR A JOB")
+                                shareIntent.putExtra(Intent.EXTRA_TEXT, "Hello, this is Virginia")
+                                mContext.startActivity(shareIntent)
+                            }) {
+                                Text(text = "Email")
+                            }
+                        }
+                    }
+                    //End of Column1
+                }
+
+            }
                 }
             }
         }
-    }
-}
+
+
+
 
 
 
